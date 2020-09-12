@@ -15,7 +15,7 @@ $em2 = ""; //email 2
 $password = ""; //password
 $password2 = ""; //password 2
 $date = ""; //Sign up date 
-$error_array = array(); /
+$error_array = array(); 
 
 
 if(isset($_POST['register'])){
@@ -51,6 +51,18 @@ if(isset($_POST['register'])){
 
 	$date = date("Y-m-d"); //Current date
 
+
+
+	if ($em == $em2){
+          if (filter_var($em, FILTER_VALIDATE_EMAIL)) {
+          	$em = filter_var($em, FILTER_VALIDATE_EMAIL);
+          }else{
+          	echo "Invalid format";
+          }
+	}else{
+		echo "Emails Does not Match";
+	}
+
 }
 
 
@@ -77,7 +89,7 @@ if(isset($_POST['register'])){
    	<br>
    	<input type="password" name="cpassword" placeholder="Confirm Password" required>
    	<br>
-   	<input type="submit" name="submit" value="Register">
+   	<input type="submit" name="register" value="Register">
 
    </form>
 </body>
