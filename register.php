@@ -56,9 +56,17 @@ if(isset($_POST['register'])){
 	if ($em == $em2){
           if (filter_var($em, FILTER_VALIDATE_EMAIL)) {
           	$em = filter_var($em, FILTER_VALIDATE_EMAIL);
+          	$emcheck = mysqli_query($con, "SELECT email FROM users where email='$em'");
+          	$emailnumrows = mysqli_num_rows($emcheck);
+
+          	if($emailnumrows > 0){
+              echo "email already exist";
+          	}
           }else{
           	echo "Invalid format";
           }
+   
+
 	}else{
 		echo "Emails Does not Match";
 	}
