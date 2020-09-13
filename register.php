@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 
 $con= mysqli_connect("localhost", "root", "", "socialmediasite");
 if(mysqli_connect_errno()){
@@ -71,6 +72,31 @@ if(isset($_POST['register'])){
 		echo "Emails Does not Match";
 	}
 
+
+
+    if(strlen($fname) > 25 || strlen($fname) < 2) {
+		echo "Your first name must be between 2 and 25 characters";
+	}
+
+	if(strlen($lname) > 25 || strlen($lname) < 2) {
+		echo "Your last name must be between 2 and 25 characters";
+	}
+
+	
+	if($password != $password2) {
+		echo  "Your passwords do not match";
+	}
+	else {
+		if(preg_match('/[^A-Za-z0-9]/', $password)) {
+			echo "Your password can only contain english characters or numbers <br>";
+		}
+	}
+
+
+    if(strlen($password > 30 || strlen($password) < 5)) {
+		echo "Your password must be betwen 5 and 30 characters";
+	}
+
 }
 
 
@@ -85,15 +111,23 @@ if(isset($_POST['register'])){
 </head>
 <body>
    <form action="register.php" method="POST">
-   	<input type="text" name="fname" placeholder="First Name" required>
+   	<input type="text" name="fname" placeholder="First Name"  value="<?php if(isset($_SESSION['fname'])){
+        echo $_SESSION['fname'] ;
+   	}?>" required>
    	<br>
-   	<input type="text" name="lname" placeholder="Last Name" required>
+   	<input type="text" name="lname" placeholder="Last Name"  value="<?php if(isset($_SESSION['lname'])){
+        echo $_SESSION['lname'] ;
+   	}?>" required>
    	<br>
-   	<input type="email" name="email" placeholder="Email" required>
+   	<input type="email" name="email" placeholder="Email" value="<?php if(isset($_SESSION['email'])){
+        echo $_SESSION['email'] ;
+   	}?>" required>
    	<br>
-   	<input type="email" name="email2" placeholder="Repeat Email" required>
+   	<input type="email" name="email2" placeholder="Repeat Email" value="<?php if(isset($_SESSION['email2'])){
+        echo $_SESSION['email2'] ;
+   	}?>" required>
    	<br>
-   	<input type="password" name="password" placeholder="Password" required>
+   	<input type="password" name="password" placeholder="Password"  required>
    	<br>
    	<input type="password" name="cpassword" placeholder="Confirm Password" required>
    	<br>
