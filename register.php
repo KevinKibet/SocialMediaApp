@@ -1,7 +1,8 @@
 
 <?php
 require 'config/config.php';
-require 'includes/form_handlers/registerhandler.php'
+require 'includes/form_handlers/registerhandler.php';
+//require 'includes/form_handlers/loginhandler.php';
 //declaring the variables
 ?>
 
@@ -16,6 +17,22 @@ require 'includes/form_handlers/registerhandler.php'
 	<title>Register</title>
 </head>
 <body>
+     <!--Login Form-->
+
+     <form action="register.php" method="POST">
+		<input type="email" name="loginemail" placeholder="Email Address"  required>
+		<br>
+		<input type="password" name="loginpassword" placeholder="Password">
+		<br>
+		<input type="submit" name="loginbutton" value="Login">
+		<br>
+
+	</form>
+
+
+
+
+	<!--register form-->
    <form action="register.php" method="POST">
    	<input type="text" name="fname" placeholder="First Name"  value="<?php if(isset($_SESSION['fname'])){
         echo $_SESSION['fname'] ;
