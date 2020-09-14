@@ -116,9 +116,32 @@ if(isset($_POST['register'])){
 		}
 
 		
+
+
+//prof pic assignment
+	$rand == rand(1,2);  //generating random numbers between 1 and 2
+
+	if ($rand == 1) {
+		$profpic = "assets/images/profile_pics/defaults/head_red.png";
+
+	}else if($rand==2){
+
+		$profpic = "assets/images/profile_pics/defaults/head_wet_asphalt.png";
 	}
 
+	
     
+    $query = mysqli_query($con, "INSERT INTO users VALUES ('', '$fname', '$lname', '$username', '$date', '$profpic', '0', '0', 'no', '$password', ',', '$em')");
+
+
+
+     
+
+
+	}
+
+
+
 
 }
 
