@@ -28,13 +28,13 @@ if(isset($_POST['register'])){
 	//email
 	$em = strip_tags($_POST['email']); //Remove html tags
 	$em = str_replace(' ', '', $em); //remove spaces
-	$em = ucfirst(strtolower($em)); //Uppercase first letter
+	$em = strtolower($em); //Uppercase first letter
 	$_SESSION['email'] = $em; //Stores email into session variable
 
 	//email 2
 	$em2 = strip_tags($_POST['email2']); //Remove html tags
 	$em2 = str_replace(' ', '', $em2); //remove spaces
-	$em2 = ucfirst(strtolower($em2)); //Uppercase first letter
+	$em2 = strtolower($em2); //Uppercase first letter
 	$_SESSION['email2'] = $em2; //Stores email2 into session variable
 
 	//Password
@@ -91,7 +91,7 @@ if(isset($_POST['register'])){
 
 
 	if(empty($error_array)) {
-		$password = md5($password); //Encrypt password before sending to database
+		$password = ($password); //Encrypt password before sending to database
 
 		//Generate username by concatenating first name and last name
 		$username = strtolower($fname . "_" . $lname);
