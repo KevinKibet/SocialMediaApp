@@ -4,5 +4,11 @@ include('includes/header.php');
 //session_destroy();
 ?>
 
+<div class = "user_details column">
+
+<a href="#"><img src="<?php echo $user['profpic']?>"></a>	
+
+</div>
+
 </body>
 </html>

@@ -111,16 +111,16 @@ if(isset($_POST['register'])){
 
 //prof pic assignment
 		
-		$profpic = '' ;
-		$rand = '';
+		//$profpic = '' ;
+		//$rand = '';
 
-	$rand == rand(1,2);  //generating random numbers between 1 and 2
+//	$rand == rand(1,2);  //generating random numbers between 1 and 2
 
-	if ($rand == 1) 
-		$profpic = "assets/images/profile_pics/defaults/head_red.png";
+	//if ($rand == 1) 
+		//$profpic = "assets/images/profile_pics/defaults/head_red.png";
 	
 
-	else if($rand==2)
+	//else if($rand==2)
 
 		$profpic = "assets/images/profile_pics/defaults/head_wet_asphalt.png";
 	
