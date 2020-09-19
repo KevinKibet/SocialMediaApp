@@ -23,6 +23,7 @@ body {
 	border-bottom: 0.25em solid #34495E;
 	margin: 0 0 10px 0;
 	display: inline-flex;
+	z-index: 10px;
 }
 
 
@@ -59,4 +60,23 @@ nav a{
 nav a:hover{
 	border-bottom: 7px solid #e67e22;
 	color: #fff;
+}
+
+
+.wrapper {
+	margin: 0 auto;
+	top: 50px;
+	position: relative;
+	padding: 0 10px;
+	width: 75%;
+	min-width: 950px;
+}
+
+.column {
+	background-color: #fff;
+	padding: 10px;
+	border: 1px solid #D3D3D3;
+	border-radius: 5px;
+	box-shadow: 2px 2px 1px #D3D3D3;
+	z-index: -1;
 }
