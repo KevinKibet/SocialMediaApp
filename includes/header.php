@@ -35,10 +35,10 @@ if (isset($_SESSION['username'])) {
     <nav>
     	<a href="#"><?php echo $user['firstname']; ?></i></a>
     	<a href="#"><i class = "fa fa-home"></i></a>
-    	<a href="#"><i class = "fa fa-envelope"></i></a>
-    	<a href="#"><i class = "fa fa-bell-o"></i></a>
-    	<a href="#"><i class = "fa fa-users"></i></a>
-    	<a href="#"><i class = "fa fa-cog"></i></a>
+    	<a href="#"><i class = "fa fa-envelop"></i></a>
+    	<a href="#"><i class = "fa fa-bel-o"></i></a>
+    	<a href="#"><i class = "fa fa-uses"></i></a>
+    	<a href="#"><i class = "fa fa-cg"></i></a>
     	
     </nav>
 </div>
