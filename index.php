@@ -1,6 +1,7 @@
 <?php
 
 include('includes/header.php');
+include('includes/classes/user.php');
 //session_destroy();
 ?>
 
@@ -26,6 +27,13 @@ include('includes/header.php');
 		<input type="submit" name="submitpost" id="submitpost" value="Post"> 
 		
 	</form>
+
+	<?php 
+
+    $user_obj = new User($con, $userLoggedin);
+    echo $user_obj->getFirstAndLastName();
+
+	?>
 
 </div>
 </div>
