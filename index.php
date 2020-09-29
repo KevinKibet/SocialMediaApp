@@ -3,6 +3,13 @@
 include('includes/header.php');
 include('includes/classes/user.php');
 //session_destroy();
+include("includes/classes/post.php");
+
+
+if(isset($_POST['submitpost'])){
+	$post = new Post($con, $userLoggedin);
+	$post->submitPost($_POST['post'], 'none');
+}
 ?>
 
 <div class = "user_details column">
