@@ -35,7 +35,7 @@ public function getUsername() {
 		$query = mysqli_query($this->con, "SELECT userclosed FROM users WHERE username='$username'");
 		$row = mysqli_fetch_array($query);
 
-		if($row['user_closed'] == 'yes')
+		if($row['userclosed'] == 'yes')
 			return true;
 		else 
 			return false;

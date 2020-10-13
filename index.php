@@ -38,7 +38,7 @@ if(isset($_POST['submitpost'])){
 	<?php 
 
     $user_obj = new User($con, $userLoggedin);
-    echo $user_obj->getFirstAndLastName();
+    $post->loadPostFriends();
 
 	?>
 

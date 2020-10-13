@@ -69,7 +69,15 @@ class Post {
 
 
 
-//Timeframe
+                $user_details_query = mysqli_query($this->con, "SELECT firstname, lastname, profpic FROM users WHERE username='$added_by'");
+				$user_row = mysqli_fetch_array($user_details_query);
+				$first_name = $user_row['firstname'];
+				$last_name = $user_row['lastname'];
+				$profile_pic = $user_row['profpic'];
+
+
+
+         //Timeframe
 					$date_time_now = date("Y-m-d H:i:s");
 					$start_date = new DateTime($date_time); //Time of post
 					$end_date = new DateTime($date_time_now); //Current time
@@ -132,10 +140,32 @@ class Post {
 							$time_message = $interval->s . " seconds ago";
 						}
 					}
-				
+
+
+
+					$str .= "<div class='status_post'>
+								<div class='post_profile_pic'>
+									<img src='$profile_pic' width='50'>
+								</div>
+
+								<div class='posted_by' style='color:#ACACAC;'>
+									<a href='$added_by'> $first_name $last_name </a> $user_to &nbsp;&nbsp;&nbsp;&nbsp;$time_message
+								</div>
+								<div id='post_body'>
+									$body
+									<br>
+								</div>
+
+							</div>
+							<hr>";
+
+
+
 
 				
    }
+
+   echo $str ;
 
 }
 }
