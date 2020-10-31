@@ -36,9 +36,10 @@ if(isset($_POST['submitpost'])){
 	</form>
 
 	<?php 
-
+    
     $user_obj = new User($con, $userLoggedin);
     $post->loadPostFriends();
+
 
 	?>
 
